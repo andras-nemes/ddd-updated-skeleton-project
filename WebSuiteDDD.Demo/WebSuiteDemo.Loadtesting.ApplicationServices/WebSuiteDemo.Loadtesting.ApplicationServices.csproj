@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49089AFB-9172-44CE-904F-84C1B83D1FEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSuiteDemo.Loadtesting.ApplicationServices</RootNamespace>
+    <AssemblyName>WebSuiteDemo.Loadtesting.ApplicationServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\ITimetableService.cs" />
+    <Compile Include="Implementations\TimetableService.cs" />
+    <Compile Include="Messaging\AddOrUpdateLoadtestsRequest.cs" />
+    <Compile Include="Messaging\AddOrUpdateLoadtestsResponse.cs" />
+    <Compile Include="Messaging\DeleteLoadtestRequest.cs" />
+    <Compile Include="Messaging\DeleteLoadtestResponse.cs" />
+    <Compile Include="Messaging\GetLoadtestsForTimePeriodRequest.cs" />
+    <Compile Include="Messaging\GetLoadtestsForTimePeriodResponse.cs" />
+    <Compile Include="Messaging\ServiceRequestBase.cs" />
+    <Compile Include="Messaging\ServiceResponseBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebSuiteDDD.SharedKernel\WebSuiteDDD.SharedKernel.csproj">
+      <Project>{5a3fad4c-8cf2-460a-bf0c-ebbc016dd62e}</Project>
+      <Name>WebSuiteDDD.SharedKernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebSuiteDemo.Loadtesting.Domain\WebSuiteDemo.Loadtesting.Domain.csproj">
+      <Project>{dc2bc578-d8b7-4bb7-8fc4-a3e89cd9ad5b}</Project>
+      <Name>WebSuiteDemo.Loadtesting.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
