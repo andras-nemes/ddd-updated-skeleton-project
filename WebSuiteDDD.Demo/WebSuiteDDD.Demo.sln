@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSuiteDemo.Loadtesting.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSuiteDDD.WebApi", "WebSuiteDDD.WebApi\WebSuiteDDD.WebApi.csproj", "{150ACC6E-3E22-49F5-A0F3-DF4E99D424B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSuiteDDD.Infrastructure.Common", "WebSuiteDDD.Infrastructure.Common\WebSuiteDDD.Infrastructure.Common.csproj", "{209FDBCE-D282-43D4-ACA7-BF7073A2AF20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSuiteDDD.FinancialPlanner", "WebSuiteDDD.FinancialPlanner\WebSuiteDDD.FinancialPlanner.csproj", "{A209601E-5E60-4E6D-A4F2-897F5FA63077}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{150ACC6E-3E22-49F5-A0F3-DF4E99D424B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{150ACC6E-3E22-49F5-A0F3-DF4E99D424B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{150ACC6E-3E22-49F5-A0F3-DF4E99D424B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209FDBCE-D282-43D4-ACA7-BF7073A2AF20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209FDBCE-D282-43D4-ACA7-BF7073A2AF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209FDBCE-D282-43D4-ACA7-BF7073A2AF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209FDBCE-D282-43D4-ACA7-BF7073A2AF20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A209601E-5E60-4E6D-A4F2-897F5FA63077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A209601E-5E60-4E6D-A4F2-897F5FA63077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A209601E-5E60-4E6D-A4F2-897F5FA63077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A209601E-5E60-4E6D-A4F2-897F5FA63077}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

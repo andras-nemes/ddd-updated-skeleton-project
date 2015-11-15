@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\RabbitMQ.Client.3.5.6\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstractions\ITimetableService.cs" />
+    <Compile Include="Implementations\TimetableChangedEmailEventHandler.cs" />
+    <Compile Include="Implementations\TimetableChangedRabbitMqMessagingEventHandler.cs" />
     <Compile Include="Implementations\TimetableService.cs" />
+    <Compile Include="Implementations\TimetableServiceWithEmail.cs" />
     <Compile Include="Messaging\AddOrUpdateLoadtestsRequest.cs" />
     <Compile Include="Messaging\AddOrUpdateLoadtestsResponse.cs" />
     <Compile Include="Messaging\DeleteLoadtestRequest.cs" />
@@ -52,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebSuiteDDD.Infrastructure.Common\WebSuiteDDD.Infrastructure.Common.csproj">
+      <Project>{209fdbce-d282-43d4-aca7-bf7073a2af20}</Project>
+      <Name>WebSuiteDDD.Infrastructure.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebSuiteDDD.SharedKernel\WebSuiteDDD.SharedKernel.csproj">
       <Project>{5a3fad4c-8cf2-460a-bf0c-ebbc016dd62e}</Project>
       <Name>WebSuiteDDD.SharedKernel</Name>
@@ -60,6 +70,9 @@
       <Project>{dc2bc578-d8b7-4bb7-8fc4-a3e89cd9ad5b}</Project>
       <Name>WebSuiteDemo.Loadtesting.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebSuiteDDD.SharedKernel;
+using WebSuiteDDD.SharedKernel.DomainEvents;
+using WebSuiteDemo.Loadtesting.Domain.DomainEvents;
 
 namespace WebSuiteDemo.Loadtesting.Domain
 {
@@ -62,8 +64,10 @@ namespace WebSuiteDemo.Loadtesting.Domain
 					}
 				}
 			}
-
-			return new AddOrUpdateLoadtestsValidationResult(toBeInserted, toBeUpdated, failed, resultSummaryBuilder.ToString());
+			AddOrUpdateLoadtestsValidationResult validationResult = new AddOrUpdateLoadtestsValidationResult(toBeInserted, toBeUpdated, failed, resultSummaryBuilder.ToString());
+			TimetableChangedEventArgs args = new TimetableChangedEventArgs(validationResult);
+			DomainEventMediator.RaiseEvent(args);
+			return validationResult;
 		}
 
 		private LoadtestValidationSummary OkToAddOrModify(Loadtest loadtest)

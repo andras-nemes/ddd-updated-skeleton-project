@@ -42,6 +42,7 @@
     <Compile Include="Agent.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Description.cs" />
+    <Compile Include="DomainEvents\TimetableChangedEventArgs.cs" />
     <Compile Include="Engineer.cs" />
     <Compile Include="ITimetableRepository.cs" />
     <Compile Include="ITimetableViewModelRepository.cs" />

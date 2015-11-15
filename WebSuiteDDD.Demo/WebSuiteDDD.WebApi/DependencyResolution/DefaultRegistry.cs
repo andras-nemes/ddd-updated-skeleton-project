@@ -19,6 +19,8 @@ namespace WebSuiteDDD.WebApi.DependencyResolution
 {
 	using StructureMap.Configuration.DSL;
 	using StructureMap.Graph;
+	using WebSuiteDDD.Infrastructure.Common.Emailing;
+	using WebSuiteDemo.Loadtesting.ApplicationServices.Abstractions;
 	using WebSuiteDemo.Loadtesting.ApplicationServices.Implementations;
 	using WebSuiteDemo.Loadtesting.Repository.EF;
 	using WebSuiteDemo.Loadtesting.Repository.EF.Repositories;
@@ -35,9 +37,10 @@ namespace WebSuiteDDD.WebApi.DependencyResolution
 					scan.TheCallingAssembly();
 					scan.AssemblyContainingType<TimetableService>();
 					scan.AssemblyContainingType<TimetableViewModelRepository>();
-					scan.WithDefaultConventions();
+					scan.WithDefaultConventions();				
 				});
 			//For<IExample>().Use<Example>();
+			//For<ITimetableService>().Use<TimetableService>().DecorateWith(i => new TimetableServiceWithEmail(i, new FakeEmailService()));
 		}
 
 		#endregion

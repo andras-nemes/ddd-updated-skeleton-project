@@ -63,7 +63,7 @@ namespace DemoDatabaseTester.WebSuiteDataMigrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-						Description_ShortDescription = c.String(nullable: false),
+                        Description_ShortDescription = c.String(nullable: false),
 						Description_LongDescription = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

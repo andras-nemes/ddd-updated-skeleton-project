@@ -16,8 +16,8 @@ namespace PostDeleteActionTester
 
 		static void Main(string[] args)
 		{
-			//RunPostOperation();
-			RunDeleteOperation();
+			RunPostOperation();
+			//RunDeleteOperation();
 		}
 
 		private static void RunPostOperation()
@@ -31,11 +31,11 @@ namespace PostDeleteActionTester
 				AgentCountry = "USA",
 				CustomerName = "OK Customer",
 				DurationSec = 600,
-				EngineerName = "Jane",
+				EngineerName = "John",
 				LoadtestTypeShortDescription = "Stress test",
 				ProjectName = "Third project",
 				ScenarioUriOne = "http://www.hello.com",
-				StartDate = new StartDate() { Year = 2015, Month = 8, Day = 22, Hour = 15, Minute = 30, Timezone = "E. Europe Standard Time" },
+				StartDate = new StartDate() { Year = 2016, Month = 04, Day = 24, Hour = 15, Minute = 30, Timezone = "E. Europe Standard Time" },
 				UserCount = 30
 			};
 			InsertUpdateLoadtestViewModel second = new InsertUpdateLoadtestViewModel()
@@ -43,13 +43,13 @@ namespace PostDeleteActionTester
 				AgentCity = "Frankfurt",
 				AgentCountry = "Germany",
 				CustomerName = "Great customer",
-				DurationSec = 20,
+				DurationSec = 250,
 				EngineerName = "Fred",
 				LoadtestTypeShortDescription = "Capacity test",
 				ProjectName = "First project",
 				ScenarioUriOne = "http://www.goodday.com",
 				ScenarioUriTwo = "http://www.goodevening.com",
-				StartDate = new StartDate() { Year = 2015, Month = 8, Day = 21, Hour = 16, Minute = 00, Timezone = "Nepal Standard Time" },
+				StartDate = new StartDate() { Year = 2017, Month = 04, Day = 24, Hour = 16, Minute = 00, Timezone = "Nepal Standard Time" },
 				UserCount = 50
 			};
 

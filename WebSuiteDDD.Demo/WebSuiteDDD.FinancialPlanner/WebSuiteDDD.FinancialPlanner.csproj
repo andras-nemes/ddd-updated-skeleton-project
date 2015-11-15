@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE420E56-2501-4F97-9DB0-259BA6C637C2}</ProjectGuid>
+    <ProjectGuid>{A209601E-5E60-4E6D-A4F2-897F5FA63077}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DemoDatabaseTester</RootNamespace>
-    <AssemblyName>DemoDatabaseTester</AssemblyName>
+    <RootNamespace>WebSuiteDDD.FinancialPlanner</RootNamespace>
+    <AssemblyName>WebSuiteDDD.FinancialPlanner</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,14 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\RabbitMQ.Client.3.5.6\lib\net40\RabbitMQ.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,43 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoadtestingContextService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebSuiteDataMigrations\201508021616597_FirstInitialisation.cs" />
-    <Compile Include="WebSuiteDataMigrations\201508021616597_FirstInitialisation.Designer.cs">
-      <DependentUpon>201508021616597_FirstInitialisation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WebSuiteDataMigrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebSuiteDDD.Repository.EF\WebSuiteDDD.Repository.EF.csproj">
-      <Project>{2be09944-4707-43a5-9d61-f91bee6eb675}</Project>
-      <Name>WebSuiteDDD.Repository.EF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebSuiteDDD.SharedKernel\WebSuiteDDD.SharedKernel.csproj">
-      <Project>{5a3fad4c-8cf2-460a-bf0c-ebbc016dd62e}</Project>
-      <Name>WebSuiteDDD.SharedKernel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebSuiteDemo.Loadtesting.Domain\WebSuiteDemo.Loadtesting.Domain.csproj">
-      <Project>{dc2bc578-d8b7-4bb7-8fc4-a3e89cd9ad5b}</Project>
-      <Name>WebSuiteDemo.Loadtesting.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebSuiteDemo.Loadtesting.Repository.EF\WebSuiteDemo.Loadtesting.Repository.EF.csproj">
-      <Project>{9830ccb2-7c98-4267-8c54-d7ae5c6c119a}</Project>
-      <Name>WebSuiteDemo.Loadtesting.Repository.EF</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="WebSuiteDataMigrations\201508021616597_FirstInitialisation.resx">
-      <DependentUpon>201508021616597_FirstInitialisation.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

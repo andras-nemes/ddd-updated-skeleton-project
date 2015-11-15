@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebSuiteDDD.Infrastructure.Common.Emailing;
+using WebSuiteDDD.SharedKernel.DomainEvents;
 using WebSuiteDemo.Loadtesting.ApplicationServices.Abstractions;
 using WebSuiteDemo.Loadtesting.ApplicationServices.Messaging;
 using WebSuiteDemo.Loadtesting.Domain;
+using WebSuiteDemo.Loadtesting.Domain.DomainEvents;
 
 namespace WebSuiteDemo.Loadtesting.ApplicationServices.Implementations
 {
@@ -14,7 +17,8 @@ namespace WebSuiteDemo.Loadtesting.ApplicationServices.Implementations
 		private readonly ITimetableRepository _timetableRepository;
 		private readonly ITimetableViewModelRepository _timetableViewModelRepository;
 
-		public TimetableService(ITimetableRepository timetableRepository, ITimetableViewModelRepository timetableViewModelRepository)
+		public TimetableService(ITimetableRepository timetableRepository, 
+			ITimetableViewModelRepository timetableViewModelRepository)
 		{
 			if (timetableRepository == null) throw new ArgumentNullException("TimetableRepository");
 			if (timetableViewModelRepository == null) throw new ArgumentNullException("TimetableViewModelRepository");
@@ -57,7 +61,7 @@ namespace WebSuiteDemo.Loadtesting.ApplicationServices.Implementations
 				IList<Loadtest> loadtestsAddedOrUpdated = _timetableViewModelRepository.ConvertToDomain(addOrUpdateLoadtestsRequest.Loadtests);
 				AddOrUpdateLoadtestsValidationResult validationResult = timetable.AddOrUpdateLoadtests(loadtestsAddedOrUpdated);
 				_timetableRepository.AddOrUpdateLoadtests(validationResult);
-				resp.AddOrUpdateLoadtestsValidationResult = validationResult;
+				resp.AddOrUpdateLoadtestsValidationResult = validationResult;				
 			}
 			catch (Exception ex)
 			{
