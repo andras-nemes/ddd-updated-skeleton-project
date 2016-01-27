@@ -19,11 +19,12 @@ namespace WebSuiteDDD.WebApi.DependencyResolution
 {
 	using StructureMap.Configuration.DSL;
 	using StructureMap.Graph;
+	using WebSuiteDDD.Infrastructure.Common.ApplicationSettings;
 	using WebSuiteDDD.Infrastructure.Common.Emailing;
 	using WebSuiteDemo.Loadtesting.ApplicationServices.Abstractions;
 	using WebSuiteDemo.Loadtesting.ApplicationServices.Implementations;
-	using WebSuiteDemo.Loadtesting.Repository.EF;
-	using WebSuiteDemo.Loadtesting.Repository.EF.Repositories;
+	using WebSuiteDemo.Loadtesting.Repository.MongoDb.Repositories;
+	//using WebSuiteDemo.Loadtesting.Repository.EF.Repositories;
 
 	public class DefaultRegistry : Registry
 	{
@@ -41,6 +42,7 @@ namespace WebSuiteDDD.WebApi.DependencyResolution
 				});
 			//For<IExample>().Use<Example>();
 			//For<ITimetableService>().Use<TimetableService>().DecorateWith(i => new TimetableServiceWithEmail(i, new FakeEmailService()));
+			For<IConnectionStringRepository>().Use<WebConfigConnectionStringRepository>();
 		}
 
 		#endregion

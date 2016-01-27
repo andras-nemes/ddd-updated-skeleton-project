@@ -146,6 +146,10 @@
       <Project>{9830ccb2-7c98-4267-8c54-d7ae5c6c119a}</Project>
       <Name>WebSuiteDemo.Loadtesting.Repository.EF</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebSuiteDemo.Loadtesting.Repository.MongoDb\WebSuiteDemo.Loadtesting.Repository.MongoDb.csproj">
+      <Project>{a2657472-8e95-41df-9ab9-fe3273af57ca}</Project>
+      <Name>WebSuiteDemo.Loadtesting.Repository.MongoDb</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

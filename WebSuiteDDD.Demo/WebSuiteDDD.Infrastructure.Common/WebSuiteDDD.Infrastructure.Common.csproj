@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="ApplicationSettings\ConfigFileConfigurationRepository.cs" />
     <Compile Include="ApplicationSettings\IConfigurationRepository.cs" />
+    <Compile Include="ApplicationSettings\IConnectionStringRepository.cs" />
+    <Compile Include="ApplicationSettings\WebConfigConnectionStringRepository.cs" />
     <Compile Include="Emailing\EmailArguments.cs" />
     <Compile Include="Emailing\EmailSendingResult.cs" />
     <Compile Include="Emailing\FakeEmailService.cs" />
